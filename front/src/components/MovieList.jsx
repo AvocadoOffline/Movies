@@ -52,7 +52,7 @@ function MovieCard({ movie }) {
         <p className="movie-description">{movie.description}</p>
         <div className="movie-meta">
           <span className="movie-rating">⭐ {movie.rating}/10</span>
-          <span className="movie-duration">0 min</span>
+          <span className="movie-duration">120 min</span>
         </div>
         <Link to={`/movie/${movie.movie_id}`} className="book-button">
           Book Now

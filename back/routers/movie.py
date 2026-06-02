@@ -2,7 +2,7 @@ from .. import models, schemas
 from fastapi import HTTPException, status, Response, Depends, APIRouter
 from ..database import get_db
 from sqlalchemy.orm import Session
-from typing import List, Optional
+from typing import List
 
 router = APIRouter(
     prefix = "/api/movies",

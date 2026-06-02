@@ -26,3 +26,9 @@ class SeatResponse(BaseModel):
     is_booked: bool
     seat_number: str
     model_config = ConfigDict({"from_attributes": True})
+
+class BookingCreate(BaseModel):
+    showtime_id: int
+    seats: list
+    customer: dict
+    total_amount: int

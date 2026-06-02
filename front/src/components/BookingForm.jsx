@@ -30,7 +30,6 @@ function BookingForm() {
   const fetchSeats = async () => {
     try {
       const response = await axios.get(`http://127.0.0.1:8000/api/movies/showtimes/${showtime.id}/seats`);
-      console.log(response.data)
       setSeats(response.data);
       setLoading(false);
     } catch (error) {

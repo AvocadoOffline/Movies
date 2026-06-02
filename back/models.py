@@ -48,3 +48,25 @@ class Seat(Base):
     booked_at = Column(TIMESTAMP(timezone=True), nullable=True)
     
     showtime = relationship("Showtime", back_populates="corresponding_seats")
+    
+class Booking(Base):
+    __tablename__ = "bookings"
+    
+    id = Column(Integer, primary_key=True, nullable=False)
+    booking_id = Column(Integer, nullable=False, unique=True)
+    customer_email = Column(String, nullable=False)
+    customer_phone = Column(String, nullable=False)
+    customer_name = Column(String, nullable=False)
+    
+    movie_title = Column(String, nullable=False)
+    movie_rating = Column(Integer, nullable=False)
+    
+    hall = Column(String, nullable=False)
+    showtime_id = Column(Integer, ForeignKey("showtimes.id"), nullable=False)
+    show_time = Column(TIMESTAMP(timezone=True), nullable=False)
+    
+    seats = Column(String, nullable=False)  # Store as comma-separated string e.g., "A1,A2,B5"
+    total_amount = Column(Integer, nullable=False)
+    created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
+    
+    showtime = relationship("Showtime")

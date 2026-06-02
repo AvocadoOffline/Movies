@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from . import models
 from .database import engine, get_db
-from .routers import movie, showtimes
+from .routers import movie, showtimes, booking
 from .getMovies import load_movies, genres
 models.Base.metadata.create_all(bind = engine)
 
@@ -70,6 +70,7 @@ app.add_middleware(
 
 app.include_router(movie.router)
 app.include_router(showtimes.router)
+app.include_router(booking.router)
 
 @app.get("/")
 async def root():
