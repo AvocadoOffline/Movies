@@ -1,0 +1,75 @@
+# ===================
+# Backend (FastAPI)
+# ===================
+# Python cache
+back/__pycache__/
+back/*/__pycache__/
+back/*.pyc
+back/*.pyo
+back/*.pyd
+
+# Virtual Environment (the movie-backend folder)
+back/movie-backend/
+back/venv/
+back/.venv/
+back/env/
+
+# Environment variables
+back/.env
+back/.env.local
+
+# Database
+back/*.db
+back/*.sqlite
+back/*.sqlite3
+
+# Testing
+back/.pytest_cache/
+back/.coverage
+back/htmlcov/
+
+# ===================
+# Frontend (React)
+# ===================
+# Dependencies
+front/node_modules/
+
+# Build outputs
+front/build/
+front/dist/
+
+# Environment variables
+front/.env
+front/.env.local
+
+# Logs
+front/*.log
+
+# Cache
+front/.cache/
+
+# Testing
+front/coverage/
+
+# ===================
+# Root level (in case you accidentally install stuff here)
+# ===================
+node_modules/
+package.json
+package-lock.json
+
+# ===================
+# IDE and OS
+# ===================
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ===================
+# Logs and Temp
+# ===================
+*.log
+*.tmp
+*.bak

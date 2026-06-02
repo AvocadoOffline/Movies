@@ -1,0 +1,153 @@
+.movie-details {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: fadeIn var(--transition-normal);
+}
+
+.movie-details-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .movie-details-layout {
+    flex-direction: row;
+  }
+}
+
+.movie-details-poster {
+  flex: 1;
+}
+
+.movie-details-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.movie-details-content {
+  flex: 2;
+  padding: var(--spacing-xl);
+}
+
+.movie-details-title {
+  font-size: var(--font-size-3xl);
+  font-weight: bold;
+  margin-bottom: var(--spacing-lg);
+  color: var(--gray-800);
+}
+
+.movie-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.movie-tag {
+  background-color: var(--gray-200);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.rating-tag {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.movie-description-full {
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+}
+
+.showtimes-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.showtimes-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+}
+
+.showtimes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.showtime-button {
+  padding: var(--spacing-md);
+  border: 2px solid var(--gray-300);
+  background: white;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.showtime-button:hover:not(:disabled) {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.showtime-button.selected {
+  border-color: var(--primary-color);
+  background-color: var(--gray-50);
+}
+
+.showtime-time {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.showtime-hall {
+  font-size: var(--font-size-sm);
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-xs);
+}
+
+.showtime-seats {
+  font-size: var(--font-size-sm);
+  color: var(--secondary-color);
+}
+
+.book-seats-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.book-seats-button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.book-seats-button:disabled {
+  background-color: var(--gray-400);
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .movie-details-content {
+    padding: var(--spacing-lg);
+  }
+  
+  .movie-details-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .showtimes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}

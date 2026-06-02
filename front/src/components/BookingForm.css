@@ -1,0 +1,190 @@
+.booking-container {
+  max-width: 896px;
+  margin: 0 auto;
+}
+
+.booking-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-xl);
+  animation: fadeIn var(--transition-normal);
+}
+
+.booking-title {
+  font-size: var(--font-size-2xl);
+  font-weight: bold;
+  margin-bottom: var(--spacing-lg);
+  color: var(--gray-800);
+}
+
+.movie-info-card {
+  background-color: var(--gray-100);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.movie-info-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.movie-info-datetime {
+  color: var(--gray-600);
+  font-size: var(--font-size-sm);
+}
+
+.cinema-screen {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.screen-label {
+  background-color: var(--gray-800);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+}
+
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: var(--spacing-sm);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.seat-button {
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm) var(--radius-sm) var(--radius-lg) var(--radius-lg);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.seat-button:active {
+  transform: scale(0.95);
+}
+
+.seat-available {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.seat-available:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.seat-selected {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.seat-selected:hover {
+  background-color: #059669;
+}
+
+.seat-booked {
+  background-color: var(--gray-400);
+  color: white;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.form-input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.booking-summary {
+  background-color: var(--gray-50);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-color);
+}
+
+.summary-title {
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}
+
+.summary-text {
+  margin-bottom: var(--spacing-xs);
+  color: var(--gray-700);
+}
+
+.summary-total {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  margin-top: var(--spacing-md);
+  color: var(--primary-color);
+}
+
+.confirm-button {
+  padding: var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.confirm-button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.confirm-button:disabled {
+  background-color: var(--gray-400);
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .booking-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .seats-grid {
+    gap: var(--spacing-xs);
+  }
+  
+  .seat-button {
+    font-size: 10px;
+  }
+}
