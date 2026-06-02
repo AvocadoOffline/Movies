@@ -47,9 +47,23 @@ def receive_and_create_bookings(booking_info: schemas.BookingCreate, db: Session
     db.refresh(booking_information)
     return booking_information
 
+@router.get("/")
+def get_bookings_by_email(email: str, db: Session = Depends(get_db)):
+    booking = db.query(models.Booking).filter(models.Booking.customer_email == email).all()
+    return booking
+
 @router.get("/{id}")
 def get_bookings_by_id(id: int, db: Session = Depends(get_db)):
     booking = db.query(models.Booking).filter(models.Booking.booking_id == id).first()
     if not booking:
         raise HTTPException(status.HTTP_404_NOT_FOUND, detail = f"No booking found with id {id}.")
     return booking
+
+@router.delete("/delete/{id}")
+def delete_booking(id: int, db: Session = Depends(get_db)):
+    booking = db.query(models.Booking).filter(models.Booking.booking_id == id).first()
+    if not booking:
+        raise HTTPException(status.HTTP_404_NOT_FOUND, detail = f"No booking found with id {id}.")
+    db.delete(booking)
+    db.commit()
+    return {"message": "Booking deleted successfully"}

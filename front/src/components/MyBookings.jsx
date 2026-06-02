@@ -72,39 +72,32 @@ function MyBookings() {
                   <h3 className="booking-movie-title">{booking.movie_title}</h3>
                   <div className="booking-details">
                     <div className="booking-detail-item">
-                      📅 {new Date(booking.showtime).toLocaleDateString()}
+                      📅 {new Date(booking.show_time).toLocaleDateString()}
                     </div>
                     <div className="booking-detail-item">
-                      ⏰ {new Date(booking.showtime).toLocaleTimeString()}
+                      ⏰ {new Date(booking.show_time).toLocaleTimeString()}
                     </div>
                     <div className="booking-detail-item">
                       🎭 Hall {booking.hall_number}
                     </div>
                     <div className="booking-detail-item">
-                      💺 Seats: {booking.seats.join(', ')}
+                      💺 Seats: {booking.seats}
                     </div>
                     <div className="booking-detail-item">
                       💰 Total: ${booking.total_amount}
                     </div>
                     <div className="booking-detail-item">
-                      Booking ID: {booking.booking_code}
+                      Booking ID: {booking.booking_id}
                     </div>
                   </div>
                 </div>
                 <div>
-                  <span className={`booking-status ${
-                    booking.status === 'confirmed' ? 'status-confirmed' : 'status-cancelled'
-                  }`}>
-                    {booking.status}
-                  </span>
-                  {booking.status === 'confirmed' && (
                     <button
-                      onClick={() => handleCancelBooking(booking.id)}
+                      onClick={() => handleCancelBooking(booking.booking_id)}
                       className="cancel-button"
                     >
                       Cancel Booking
                     </button>
-                  )}
                 </div>
               </div>
             </div>
